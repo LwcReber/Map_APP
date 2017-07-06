@@ -1,0 +1,212 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body, div, ul {
+  padding: 0;
+}
+/*设置盒子模型*/
+div {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+/*左边菜单栏*/
+.options-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  padding: 5px 0px 20px 15px;
+  background-color: #5F7C8A;
+  text-align: center;
+  z-index: 3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: 5px 0px 3px #555;
+  color: #fff;
+  z-index: 100;
+}
+.options-box::-webkit-scrollbar {
+	width: 15px;
+} /* 这是针对缺省样式 (必须的) */
+/*自定义滚动条 只兼容chrome*/
+.options-box::-webkit-scrollbar-track {
+  background-color: #5F7C8A;
+} /* 滚动条的滑轨背景颜色 */
+
+.options-box::-webkit-scrollbar-thumb {
+  background-color: rgba(206,215,219,1);
+  border-radius: 10px;
+} /* 滑块颜色 */
+
+.options-box::-webkit-scrollbar-button {
+  display: none;
+} /* 滑轨两头的监听按钮颜色 */
+
+/*左边菜单栏显示与隐藏*/
+.showOptionsBox {
+  animation: menuShow 0.3s forwards;
+}
+
+.hideOptionsBox {
+  animation: menuHide 0.3s forwards;
+}
+#address {
+  margin-left: -40px;
+  height: 30px;
+}
+#filter {
+  margin-left: 10px;
+  width: 50px;
+  height: 30px;
+}
+@keyframes menuShow {
+  from {left: -100%;}
+  to {left: 0;}
+}
+
+@keyframes menuHide {
+  from {left: 0;}
+  to {left: -100%;}
+}
+
+/*地点列表*/
+.locations {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.locations li {
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.locations li .place {
+  position: relative;
+  width: 100%;
+}
+
+.locations li .place  .title{
+  display: inline-block;
+  max-width: 75%;
+}
+
+/*按钮样式*/
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*收藏按钮*/
+.locations li .collect {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -12px;
+  border-radius: 50%;
+  background-color: #00BBD3;
+}
+
+/*地点详细信息*/
+.locations li .detailInfo {
+  margin-top: 10px;
+  background-color: #445963;
+  border-radius: 3px;
+  color: #CED7DB;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/*选中地点*/
+.placeChosen {
+  background-color: #445963;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/*右边地图框*/
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #5F7C8A;
+  line-height: 50px;
+  z-index: 4;
+}
+
+/*菜单切换按钮*/
+.menu-toggle {
+  position: absolute;
+  top:10px;
+  left: 1%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  line-height: 30px;
+  text-align: center;
+  z-index: 5;
+  border-color: #fff;
+}
+
+.menu-toggle div {
+  width: 25px;
+  margin:6px auto;
+  border: 1px solid black;
+  border-color: #00BBD3;
+}
+
+/*地图*/
+#map {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  right: 0;
+  height: 95%;/*因为有导航条，不能设置100%，如果设置100%，进入街区全景导航条会消失*/
+  padding-left: 10px;
+}
+
+/*地图界面左移*/
+.mapCtnMoveLeft {
+  animation: moveLeft 0.3s forwards;
+}
+
+@keyframes moveLeft {
+  from {left: 30%;}
+  to {left: 0;}
+}
+
+/*地图界面右移*/
+.mapCtnMoveRight {
+  animation: moveRight 0.3s forwards;
+}
+
+@keyframes moveRight {
+  from {left: 0;}
+  to {left: 30%;}
+}

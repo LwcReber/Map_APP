@@ -1,0 +1,25 @@
+#address,#filter,.button,.map-container,.options-box,from,to{margin:0}
+.options-box{width:60%;min-width:175px}
+.map-container{left:60%;width:100%}
+@-webkit-keyframes moveLeft{from{left:60%}
+to{left:0}
+}
+@-moz-keyframes moveLeft{from{left:60%}
+to{left:0}
+}
+@keyframes moveLeft{from{left:60%}
+to{left:0}
+}
+@-webkit-keyframes moveRight{from{left:0}
+to{left:60%}
+}
+@-moz-keyframes moveRight{from{left:0}
+to{left:60%}
+}
+@keyframes moveRight{from{left:0}
+to{left:60%}
+}
+.button{padding:3px 7px;font-size:12px;margin-top:-9px}
+.options-box::-webkit-scrollbar{width:10px}
+#address{margin-left:0;height:30px}
+#filter{margin-left:0;margin-top:10px}

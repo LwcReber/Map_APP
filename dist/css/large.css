@@ -1,0 +1,22 @@
+.map-container,.options-box,body,from,to{margin:0}
+body{font-size:18px}
+.options-box{max-width:300px;left:0}
+.map-container{left:300px}
+@-webkit-keyframes moveLeft{from{left:300px}
+to{left:0}
+}
+@-moz-keyframes moveLeft{from{left:300px}
+to{left:0}
+}
+@keyframes moveLeft{from{left:300px}
+to{left:0}
+}
+@-webkit-keyframes moveRight{from{left:0}
+to{left:300px}
+}
+@-moz-keyframes moveRight{from{left:0}
+to{left:300px}
+}
+@keyframes moveRight{from{left:0}
+to{left:300px}
+}

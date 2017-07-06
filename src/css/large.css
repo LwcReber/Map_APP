@@ -1,0 +1,18 @@
+body {
+  font-size: 18px;
+}
+.options-box {
+  max-width: 300px;
+  left: 0;
+}
+.map-container {
+  left: 300px;
+}
+@keyframes moveLeft {
+  from {left: 300px;}
+  to {left: 0;}
+}
+@keyframes moveRight {
+  from {left: 0;}
+  to {left: 300px;}
+}
