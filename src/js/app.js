@@ -53,12 +53,26 @@ function animateMaker(title) {
 * marker: mapModel.markers里的marker元素
 */
 function showSearchPlaceMarker(marker) {
-  marker.setMap(map);
+  try {
+    marker.setMap(map);
+  } catch (e) {
+    function setMapException(message) {
+      this.message = message;
+    }
+    throw new setMapException('地图没有被加载，无法设置显示marker');
+  }
 }
 
 // 移除所有的maker
 function removeMaker(marker) {
-  marker.setMap(null);
+  try {
+    marker.setMap(null);
+  } catch (e) {
+    function setMapException(message) {
+      this.message = message;
+    }
+    throw new setMapException('地图没有被加载，无法移除marker');
+  }
 }
 
 /**
@@ -215,6 +229,7 @@ var ViewModel = function() {
         clp.showCollectBtn(false);
         self.collectPlaces.push(clp);
       });
+      self.locations(self.collectPlaces());
       // 显示marker
       for (var k = 0; k < mapModel.locations.length; k++) {
         removeMaker(mapModel.markers[k]);
@@ -223,9 +238,8 @@ var ViewModel = function() {
           if (mapModel.locations[k].title === item.title) {
             showSearchPlaceMarker(mapModel.markers[k]);
           }
-        })
+        });
       }
-      self.locations(self.collectPlaces());
       return;
     }
 
