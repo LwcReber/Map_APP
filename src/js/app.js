@@ -42,6 +42,8 @@ function animateMaker(title) {
       stopAllBounce();
       // 设置该地点的marker有动画
       mapModel.markers[i].setAnimation(google.maps.Animation.BOUNCE);
+      // 显示info窗口
+      populateInfoWindow(mapModel.markers[i], largeInfoWindow);
       // 地图视图偏移
       map.panTo(mapModel.markers[i].position);
     }

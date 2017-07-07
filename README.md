@@ -1,5 +1,5 @@
 ## Map APP
-使用 **gulp** 工具构建该项目，使用 **eslint** 对js进行检测，修改成符合eslint格式的代码。使用框架：**knockout JS**, 使用API：**google map API** 、**高德地图API**
+Map APP 是一个响应式应用，使用 **gulp** 工具构建该项目，使用 **eslint** 对js进行检测，修改成符合eslint格式的代码。使用框架：**knockout JS**, 使用API：**google map API** 、**高德地图API**
 
 ## install
   1. 在项目根目录运行命令行

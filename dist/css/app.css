@@ -2,7 +2,7 @@
 body,html{height:100%;overflow:hidden}
 body,div,ul{padding:0}
 div{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.container{position:relative;height:100%}
+.container{height:100%}
 .options-box{position:absolute;top:0;left:0;width:30%;height:100%;padding:5px 0 20px 15px;background-color:#5F7C8A;text-align:center;z-index:3;overflow-y:scroll;overflow-x:hidden;-webkit-box-shadow:5px 0 3px #555;-moz-box-shadow:5px 0 3px #555;box-shadow:5px 0 3px #555;color:#fff;z-index:100}
 .options-box::-webkit-scrollbar{width:15px}
 .options-box::-webkit-scrollbar-track{background-color:#5F7C8A}

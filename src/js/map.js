@@ -1,5 +1,5 @@
 var map;
-
+var largeInfoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 22.543389, lng: 114.060508 },
@@ -27,7 +27,7 @@ function initMap() {
     disableDefaultUI: true
   });
   // 地点信息窗口
-  var largeInfoWindow = new google.maps.InfoWindow();
+  largeInfoWindow = new google.maps.InfoWindow();
   var bounds = new google.maps.LatLngBounds();
   // 默认的marker样式
   var defaultIcon = makeMarkerIcon('0287D0');
@@ -58,7 +58,6 @@ function initMap() {
       map.panTo(this.position);
       populateInfoWindow(this, largeInfoWindow);
     });
-
     // 改变marker的样式
     marker.addListener('mouseover', function() {
       this.setIcon(highlightedIcon);
