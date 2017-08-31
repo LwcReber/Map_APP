@@ -280,9 +280,9 @@ var ViewModel = function() {
     var lng = place.location().lng;
 
     // 手动定义超时响应报错，网络问题或者服务器一直不响应时，用来提示使用者
-    var handleOverTime = setTimeout(function() {
-      alert('响应超时，请刷新页面重试');
-    }, 6000);
+    // var handleOverTime = setTimeout(function() {
+    //   alert('响应超时，请刷新页面重试');
+    // }, 15000);
     // 使用jquery的ajax请求地点详细信息
     // 使用高德地图API获取
     $.ajax({
@@ -290,7 +290,7 @@ var ViewModel = function() {
       + ',' + lat + '&output=json&extensions=all',
     }) // 成功响应
     .done(function(result) {
-      clearTimeout(handleOverTime);
+      // clearTimeout(handleOverTime);
       // 返回的结果是一个对象才处理
       if (Object.prototype.toString.call(result).indexOf('Object') !== -1) {
         // 成功查询
@@ -312,7 +312,7 @@ var ViewModel = function() {
       }
     })
     .fail(function(result) {
-      clearTimeout(handleOverTime);
+      // clearTimeout(handleOverTime);
       alert('请求超时,请重试');
     });
   };
